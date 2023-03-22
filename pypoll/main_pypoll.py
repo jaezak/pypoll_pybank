@@ -59,6 +59,9 @@ file = open(path4, "w+")
 
 
 #paste this if needed
+# average profit change
+        average_change = sum(profit_change_list) / len(profit_change_list)
+
   if (profit_change_list > greatest_increase[1]):
         greatest_increase[0] = int(row["Date"])
     else:
