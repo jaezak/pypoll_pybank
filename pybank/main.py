@@ -7,30 +7,35 @@ budget_data = os.path.join("budget_data.csv")
 output_path = os.path.join("..", "analysis", "pybank_analysis.csv")
 
 # set variables
-date = []
-month = 0
-month_change = []
-year = []
-total_months = []
-month_list = []
+
+total_months = 0
 profit_change = []
-average_change = []
-greatest_increase = [""]
-greatest_decrease = [""]
-total_profit_and_loss = []
-total_profits = []
+average_change = 0
+greatest_increase = 0
+greatest_decrease = 0
+total_profits = 0
+increase_month = ""
+decrease_month = ""
 
 #read CSV
 with open(budget_data) as csv_file:
     reader = csv.reader(csv_file)
     # Read the header row
     header = next(reader)
+    skip_first = next(header)
+    previous_value = int(skip_first[1])
+    #calculations
     for row in reader:
-        print (row)
+        total_months += 1
+        net_value = int(row[1])
+        total_profits += net_value
+    # steps to find profit_change
+    net_value_change = net_value - previous_value
+    previous_value = net_value 
+    
 
-#caclulations
-       
-# total number of months included in the dataset
+# average profit change
+
 # The greatest increase in profits (date and amount) over the entire period
 
 #The greatest decrease in profits (date and amount) over the entire period
