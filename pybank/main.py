@@ -2,7 +2,7 @@ import csv
 import os
 
 # Files to load
-budget_data = os.path.join("budget_data.csv")
+budget_data = os.path.join("resources/budget_data.csv")
 # file to output
 output_path = os.path.join("..", "analysis", "pybank_analysis.csv")
 
@@ -22,29 +22,14 @@ with open(budget_data) as csv_file:
     reader = csv.reader(csv_file)
     # Read the header row
     header = next(reader)
-    skip_first = next(header)
-    previous_value = int(skip_first[1])
+
     #calculations
     for row in reader:
         total_months += 1
         net_value = int(row[1])
         total_profits += net_value
-    # steps to find profit_change
-    net_value_change = net_value - previous_value
-    previous_value = net_value 
-    
 
-# average profit change
-
-# The greatest increase in profits (date and amount) over the entire period
-
-#The greatest decrease in profits (date and amount) over the entire period
-
-
-
-
-
-#output text
+#output
 
 print(
     f"\nFinancial Analysis\n"
@@ -55,11 +40,10 @@ print(
     f"Greatest Increase in Profit: \n"
     f"Greatest Decrease in Profit: \n"
 )
-# write summary to txt file
-path1 = os.path.join("pybank_analysis.txt")
-path1 = "pybank_analysis.txt"
+# write summary to txt fi
+textfilepath = "analysis/pybank_analysis.txt"
 
-with open(path1, 'w') as output:
+with open(textfilepath, 'w') as output:
     output.write("Financial Analysis\n")
     output.write("--------------------\n")
     output.write(f"Total Months: {total_months}\n")
