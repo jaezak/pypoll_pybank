@@ -76,10 +76,13 @@ textfilepath = "analysis/pypoll_analysis.txt"
 
 with open(textfilepath, 'w') as output:
     output.write("Election Results\n")
-    output.write("--------------------\n")
-    f"Total Votes: {total_votes}\n"
-    f"Charles Votes: {charles_percent}% ({charles_count})\n"
-    f"Diana Votes: {diana_percent}% ({diana_count})\n"
-    f"Raymon Votes: {raymon_percent}%({raymon_count})\n"
+    output.write(f"------------------------- \n")
+    output.write(f"Total Votes: {total_votes}\n")
+    output.write(f"Charles Votes: {charles_percent}% ({charles_count})\n")
+    output.write(f"Diana Votes: {diana_percent}% ({diana_count})\n")
+    output.write(f"Raymon Votes: {raymon_percent}%({raymon_count})\n")
+    output.write(f"Winner: Diana {winner}\n")
+
+
  
                  
