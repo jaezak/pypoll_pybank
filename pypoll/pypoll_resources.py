@@ -1,1 +1,0 @@
-# pypoll resources
